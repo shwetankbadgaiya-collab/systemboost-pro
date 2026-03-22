@@ -1,0 +1,43 @@
+{
+  "name": "systemboost-pro",
+  "version": "1.0.0",
+  "description": "SystemBoost Pro - Premium System Optimizer for Windows",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "package": "electron-builder --win",
+    "build": "electron-builder --win --publish never"
+  },
+  "author": "SystemBoost Pro",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.1",
+    "systeminformation": "^5.21.22"
+  },
+  "build": {
+    "appId": "com.systemboost.pro",
+    "productName": "SystemBoost Pro",
+    "win": {
+      "target": ["nsis"],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerHeaderIcon": "assets/icon.ico"
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ]
+  }
+}
